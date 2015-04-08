@@ -1,8 +1,8 @@
 /* ***********************************************
  	Author        : Napoleon
  	Mail		  : tyfdream@163.com
- 	Created Time  : 2015-03-21 18:58:40
-	Problem       : BC_34_C.cpp
+ 	Created Time  : 2015-04-05 15:02:03
+	Problem       : lostsister.cpp
 ************************************************ */
 #include <cstdio>
 #include <cstring>
@@ -17,20 +17,17 @@
 using namespace std; 
 #define INF 1000000000
 //typedef __int64 LL; 
+int n, tmp; 
 
 int main() {
-#ifndef ONLINE_JUDGE
-	freopen("in.txt", "w", stdout); 
-#endif // ONLINE_JUDGE
-	int n = 1000000, m = 1000000; 
-	printf("%d %d\n", n, m); 
-	for(int i = 1; i <= n; i++) {
-		printf("%d ", (rand()<<16 | rand()) % INF); 
-	}
-	puts(""); 
-	for(int i = 1; i <= n; i++) {
-		printf("%d ", (rand()<<16 | rand()) % INF); 
-	}
+	while(cin>>n ) {
+		int ans = 0; 
+		n = 2*n - 1; 
+		while(n--) {
+			cin>>tmp; ans ^= tmp; 
+		}
+		printf("%d\n", ans); 
+	}	
 	
 	return 0; 
 }
